@@ -1,0 +1,12 @@
+[libdefaults]
+    default_realm = ${KDC_REALM}
+
+[realms]
+    EXAMPLE.COM = {
+        kdc = ${KDC_DOMAIN}
+        admin_server = ${KDC_DOMAIN}
+    }
+
+[domain_realm]
+    .${KDC_DOMAIN_REALM} = ${KDC_REALM}
+    ${KDC_DOMAIN_REALM} = ${KDC_REALM}

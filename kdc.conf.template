@@ -1,0 +1,13 @@
+[kdcdefaults]
+    kdc_ports = ${KDC_PORT}
+    kdc_tcp_ports = ${KDC_PORT}
+
+[realms]
+    ${KDC_REALM} = {
+        database_name = /var/lib/krb5kdc/principal
+        admin_keytab = /var/lib/krb5kdc/kadm5.keytab
+        acl_file = /var/lib/krb5kdc/kadm5.acl
+        key_stash_file = /var/lib/krb5kdc/.k5.${KDC_REALM}
+        kdc_ports = ${KDC_PORT}
+        kdc_tcp_ports = ${KDC_PORT}
+    }
